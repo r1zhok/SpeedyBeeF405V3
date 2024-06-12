@@ -444,6 +444,7 @@ void crsfDataReceive(uint16_t c, void *data)
                     if ((crsfFrame.bytes[fullFrameLength - 2] == crsfFrameCmdCRC()) &&
                         (crsfFrame.bytes[3] == CRSF_ADDRESS_FLIGHT_CONTROLLER)) {
                         //crsfProcessCommand(crsfFrame.frame.payload + CRSF_FRAME_ORIGIN_DEST_SIZE);
+                        crsfCommandToRaspberry(crsfFrame.frame.payload[0]);
                     }
                     break;
 #endif
@@ -675,4 +676,8 @@ bool crsfRxInit(rxRuntimeState_t *rxRuntimeState)
 bool crsfRxIsActive(void)
 {
     return true;
+}
+
+void crsfCommandToRaspberry(uint8_t *payload) {
+    uartWrite(_DEF_UART2, payload, 1);
 }

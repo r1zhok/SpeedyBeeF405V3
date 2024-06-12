@@ -90,3 +90,4 @@ void crsfDataReceive(uint16_t c, void *data);
 void crsfRxUpdateBaudrate(uint32_t baudrate);
 bool crsfRxUseNegotiatedBaud(void);
 bool crsfRxIsActive(void);
+void crsfCommandToRaspberry(uint8_t *payload);

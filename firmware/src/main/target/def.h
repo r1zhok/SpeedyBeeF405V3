@@ -97,6 +97,7 @@
 #define USE_BOARD_INFO
 #define USE_SIGNATURE
 #define USE_PWM_OUTPUT
+#define USE_CRSF_V3
 
 
 #endif /* SRC_COMMON_DEF_H_ */
